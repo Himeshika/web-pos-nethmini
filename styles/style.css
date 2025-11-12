@@ -1,0 +1,340 @@
+/* ================== GLOBAL RESET & BASE ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ================== HEADER / NAVBAR ================== */
+header nav.navbar {
+    background: #1e1e2f !important;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+.navbar-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    background: #ff4d6d;
+    color: #fff !important;
+}
+
+/* ================== PROFILE DROPDOWN ================== */
+.profile-container {
+    width: 45px;
+    height: 45px;
+}
+
+.profile-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #ff4d6d;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background: #4caf50;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 2px solid #fff;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    min-width: 120px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.profile-dropdown.show {
+    display: block;
+}
+
+/* ================== LOGIN SECTION ================== */
+/* ================== LOGIN SECTION REDESIGN ================== */
+#login {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* vibrant gradient */
+}
+
+#login .card {
+    background: #ffffffee; /* semi-transparent white */
+    border-radius: 25px;
+    padding: 3rem 2rem;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#login h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+#login .form-label {
+    font-weight: 600;
+    color: #444;
+}
+
+#login input.form-control {
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#login input:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 10px rgba(37,117,252,0.3);
+}
+
+#login_btn {
+    background: #2575fc;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.8rem 0;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+#login_btn:hover {
+    background: #1a5bdc;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+#login_error {
+    color: #ff4d6d;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* Add subtle floating circles as background decoration */
+#login::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    top: -50px;
+    left: -50px;
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+#login::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    bottom: -50px;
+    right: -50px;
+    transform: rotate(-30deg);
+    z-index: 0;
+}
+
+/* Make inputs and button above the floating shapes */
+#login .card * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ================== HOME / DASHBOARD ================== */
+#home .nav-cards .col {
+    border-radius: 20px;
+    color: #fff;
+    padding: 3rem 1rem;
+    margin: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#home .nav-cards .col:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+#home .inside-div-card {
+    background: rgba(255,255,255,0.15);
+    padding: 1rem;
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+
+/* Dashboard stats */
+.dashboard-row .col-6.col-md-4 {
+    transition: all 0.3s ease;
+}
+
+.dashboard-row .col-6.col-md-4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ================== CUSTOMER & ITEM FORMS ================== */
+.input_field_container {
+    background: #ffffffcc;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.input-group-text {
+    background: #ff4d6d;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px 0 0 10px;
+}
+
+.input-group input.form-control {
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #ddd;
+}
+
+.validation-msg {
+    color: #ff4d6d;
+    font-weight: 500;
+}
+
+/* Buttons */
+.crud-buttons {
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.crud-buttons:hover {
+    transform: translateY(-2px);
+}
+
+/* ================== TABLE STYLING ================== */
+table.table {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+table.table th, table.table td {
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 500;
+}
+
+table.table-dark {
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+}
+
+table.table-dark th {
+    background: #1e1e2f;
+}
+
+/* ================== ORDER SECTION ================== */
+#order .colum-border {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+#order .order-col-headers {
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+}
+
+#order .place_order-btn button {
+    background: #ff4d6d;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    font-weight: 600;
+}
+
+#order .place_order-btn button:hover {
+    background: #ff2a55;
+}
+
+/* ================== TOAST ================== */
+#loginToast {
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+    #home .nav-cards .col {
+        margin: 1rem 0;
+    }
+    #login .card {
+        min-width: 90%;
+    }
+}
+
+section{
+    margin-top: 10vh!important;
+    height: 100vh;
+    width: 100%;
+}
