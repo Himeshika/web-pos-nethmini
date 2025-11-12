@@ -333,8 +333,40 @@ table.table-dark th {
     }
 }
 
-section{
-    margin-top: 10vh!important;
-    height: 100vh;
+/* ================== SECTION LAYOUT ================== */
+section {
+    /* Use padding instead of margin-top to avoid collapsing issues */
+    padding-top: 10vh;           /* space from top */
+    padding-left: 5vw;           /* optional horizontal padding */
+    padding-right: 5vw;
+
+    /* Full viewport height minus top padding */
+    min-height: calc(100vh - 10vh);
+
     width: 100%;
+    display: flex;               /* optional: align content */
+    flex-direction: column;
+    justify-content: flex-start; /* align content at the top */
+    align-items: center;         /* center horizontally */
+    box-sizing: border-box;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section {
+        padding-top: 8vh;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        min-height: calc(100vh - 8vh);
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding-top: 6vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        min-height: calc(100vh - 6vh);
+    }
+}
+
