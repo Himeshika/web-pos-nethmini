@@ -105,47 +105,5 @@ $(function () {
         title.text("Order");
     });
 
-    // ===== Profile Status =====
-    function updateProfileStatus() {
-        if (isLoggedIn) {
-            statusDot.style.backgroundColor = 'green';
-        } else {
-            statusDot.style.backgroundColor = 'red';
-        }
-    }
 
-    // ===== Logout =====
-    logoutBtn.addEventListener('click', () => {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You’ll be logged out of your account.",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, log out",
-            cancelButtonText: "Cancel"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                isLoggedIn = false;
-                updateProfileStatus();
-                $('#customer').addClass('d-none');
-                $('#item').addClass('d-none');
-                $('#order').addClass('d-none');
-                $('#order_history').addClass('d-none');
-                $('#login').removeClass('d-none');
-                $('#nav_list').addClass('d-none');
-                title.css("padding-left", "0");
-                title.css("padding-right", "150px");
-
-                Swal.fire({
-                    title: "Logged out!",
-                    text: "You have been successfully logged out.",
-                    icon: "success",
-                    timer: 1500,
-                    showConfirmButton: false
-                });
-            }
-        });
-    });
 });
